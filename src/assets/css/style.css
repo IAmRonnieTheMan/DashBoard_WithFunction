@@ -1,0 +1,970 @@
+
+/* 用google fonts字樣的第三方套件, import 在 public/index.html */
+* {
+    font-family: "Ubuntu Condensed", sans-serif;
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root{
+      --blue : #2a2185;
+      --white: #fff;
+      --gray: #f5f5f5;
+      --black1: #222;
+      --black2: #999;
+  }
+  
+  body{
+      min-height: 100vh;   /*不懂 */
+      overflow-x: hidden;
+  }
+  
+  
+  .container{
+      position:relative;
+      width: 100%;
+      overflow: hidden;
+  }
+  
+  .navigation{
+      position: fixed;
+      width: 300px;
+      height: 100%;
+      background: var(--blue);
+      border-left: 15px solid var(--blue); 
+      transition: 0.5s;   
+      overflow:hidden;  
+  }
+  
+  .navigation.active{
+      width:80px;
+  }
+  
+  .navigation ul{
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+  }
+  
+  .navigation ul li{
+      position: relative;
+      width: 100%;
+      list-style: none;
+      border-top-left-radius: 30px;
+      border-bottom-left-radius: 30px;
+  }
+  
+  .navigation ul li:hover,              
+  .navigation ul li.hovered{
+      background-color: var(--white);
+  }
+  
+  .navigation ul li:nth-child(1){    /*把最上頭的li與下層的li分開*/
+      margin-bottom:40px;
+      pointer-events: none;
+  }
+  
+  .navigation ul li a{
+  position:relative;
+  display: block;
+  width:100%;
+  display: flex;
+  text-decoration: none;
+  color:var(--white);
+  }
+  
+  .navigation ul li:hover a,                /*不懂 */
+  .navigation ul li.hovered a{
+  color:var(--blue);
+  }
+  
+  .navigation ul li a .icon{
+      position:relative;
+      display: block;
+      min-width: 60px;
+      height: 60px;
+      line-height: 60px;
+      text-align: center;
+  }
+  
+  .navigation ul li a .icon ion-icon{
+      font-size: 1.75rem;
+  }
+  
+  .navigation ul li a .title{
+      position:relative;
+      display: block;
+      padding: 0 10px;
+      height: 60px;
+      line-height: 60px;
+      text-align: start;
+      white-space: nowrap;
+  }
+  
+  .navigation ul li:hover a::before,          /*不懂 */
+  .navigation ul li.hovered a::before{
+      content:"";
+      position: absolute;
+      right: 0;
+      top:-50px;
+      width: 50px;
+      height: 50px;
+      background-color: red transparent;
+      border-radius: 50%;
+      box-shadow: 35px 35px 0 10px var(--white);
+      pointer-events: none;
+  }
+  
+  .navigation ul li:hover a::after,
+  .navigation ul li.hovered a::after{
+      content:"";
+      position: absolute;
+      right: 0;
+      bottom:-50px;
+      width: 50px;
+      height: 50px;
+      background-color: red transparent;
+      border-radius: 50%;
+      box-shadow: 35px -35px 0 10px var(--white);
+      pointer-events: none;
+  }
+  
+  
+  /* ================== main ======================= */
+  .main{
+      position:relative;
+      width:calc(100% - 300px);
+      left:300px;
+      min-height: 100vh;
+      background:var(--white);
+      transition:0.5s;
+      }
+  
+      .main.active{
+          width:calc(100% - 80px);
+          left:80px;
+      }
+  
+  .topbar{
+          width:100%;
+          height: 60px;
+          display:flex;
+          justify-content: space-between;
+          align-items: center;
+          padding:0 10px;
+      }
+  
+      .toggle{
+          position: relative;
+          width:60px;
+          height: 60px;
+          display: flex;
+          justify-content:center;
+          align-items: center;
+          font-size: 2.5rem;
+          cursor: pointer;
+      }
+  
+      .search{
+          position:relative;
+          width:400px;
+          margin:0 10px;
+      }
+  
+      .search label{
+          position: relative;
+          width: 100%;
+      }
+  
+      .search label input{
+          width: 100%;
+          height: 40px;
+          border-radius: 40px;
+          padding: 5px 20px;
+          padding-left: 35px;
+          font-size: 1.2rem;
+          font-size: 18px;
+          outline:none;
+          border: 2px solid var(--black1);
+      }
+  
+      .search label ion-icon{
+         position: absolute;
+         top:0;
+         left: 10px;
+         font-size: 1.2rem;
+      }
+  
+      .user{
+          position: relative;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          overflow: hidden;
+          cursor:pointer;   
+          z-index: 999;
+          overflow:hidden;
+      }
+  
+      .user img{
+          position: absolute;
+          top:0;
+          left:0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+      }
+
+      .user:hover{
+        cursor: pointer;
+        width:50px;
+        height: 50px;
+      }
+
+    
+
+      
+  
+      /* ==================cards=================== */
+  .cardBox{
+      position:relative;
+      padding:20px;
+      width:100%;
+      display: grid;
+      grid-template-columns: repeat(4,1fr);  /*物件排成一行*/
+      grid-gap:30px;
+  }
+  
+  .cardBox .card{
+      position: relative;
+      background: var(--white);
+      padding: 30px;
+      border-radius: 20px;
+      display:flex;
+      cursor:pointer;
+      justify-content: space-between;
+      box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+  }
+  
+  .cardBox .card .numbers{
+      position: relative;
+      font-size: 2.5rem;
+      font-weight: 500;
+      color:var(--blue)
+  }
+  
+  .cardBox .card .cardName{
+      margin-top: 5px;
+      font-size: 1.1rem;
+      color:var(--black2)
+  }
+  
+  .cardBox .card .iconBx{
+      font-size: 2.5rem;
+      color:var(--black2)
+  }
+  
+  .cardBox .card:hover{
+      background: var(--blue);
+  }
+  
+  .cardBox .card:hover .numbers,
+  .cardBox .card:hover .cardName,
+  .cardBox .card:hover .iconBx{
+      color:var(--white)
+  }
+  
+  /* ==========order details================ */
+  .details{
+      position:relative;
+      width:100%;
+      padding:20px;
+      display:grid;
+      grid-template-columns:2fr 1fr;
+      grid-gap:30px;
+  }
+  
+  .details .recentOrders{
+      position: relative;
+      display: grid;
+      min-height: 500px;
+      background: var(--white);
+      padding: 20px;
+      box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+      border-radius: 20px;
+  }
+  
+  .details .cardHeader{
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+  }
+  
+  .cardHeader h2{
+      font-weight: 600;
+      color: var(--blue);
+  }
+  
+  .cardHeader .btn{
+      position: relative;
+      padding: 5px 10px;
+      background: var(--blue);
+      text-decoration: none;
+      color:var(--white);
+      border-radius: 6px;
+  }
+  
+  .details table{
+      width:100%;
+      border-collapse: collapse; /*不懂*/
+      margin-top: 10px;
+      font-size: 35px;
+  }
+  
+  .details table thead td{
+      font-weight: 600;
+  } 
+  
+  .details .recentOrders table tr{
+      color: var(--black1);
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
+  
+  .details .recentOrders table tr:last-child{
+      border-bottom: none;
+  }
+  
+  .details .recentOrders table tr:hover{
+      background: var(--blue);
+      color: var(--white);
+  }
+  
+  .details .recentOrders table tr td{
+      padding:10px;
+  }
+  .details .recentOrders table tr td:last-child{
+      text-align: end;
+  }
+  
+  .details .recentOrders table tr td:nth-child(2){
+      text-align: end;
+  }
+  
+  .details .recentOrders table tr td:nth-child(3){
+      text-align: center;
+  }
+  
+  .status.delivered{
+      padding: 2px 4px;
+      background: darkgray;
+      color: var(--white);
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight:500 ;
+  }
+  .status.pending{
+      padding: 2px 4px;
+      background: black;
+      color: var(--white);
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight:500 ;
+  }
+  .status.inProgress{
+      padding: 2px 4px;
+      background: lightgrey;
+      color: var(--white);
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight:500 ;
+  }
+  .status.return{
+      padding: 2px 4px;
+      background: gray;
+      color: var(--white);
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight:500 ;
+  }
+  
+  /* ==============customer============= */
+  .recentCustomers{
+      position:relative;
+      display: grid;
+      min-height: 500px;
+      padding: 20px;
+      background: var(--white);
+      box-shadow:0 7px 25px rgba(0,0,0,0.08);
+      border-radius: 20px;
+  }
+  
+  .recentCustomers .imgBx{
+      position: relative;
+      width:40px;
+      height: 40px;
+      border-radius: 50px;
+      overflow: hidden;
+  }
+  .recentCustomers .imgBx img{
+      position: absolute;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      top:0;
+      left:0;
+  }
+  
+  .recentCustomers table tr:hover{
+      background:var(--blue);
+      color:var(--white)
+  }
+  
+  .recentCustomers table tr td{
+      padding: 12px 10px;
+     
+  }
+  
+  .recentCustomers table tr td h4{
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.2rem;
+  }
+  
+  .recentCustomers table tr td h4 span{
+      font-size: 14px;
+      color:var(--black2)
+  }
+  
+  .recentCustomers table tr:hover td h4 span{
+      font-size: 14px;
+      color:var(--white)
+  }
+  
+  
+  /* ======================time card==================== */
+
+.timeblock{
+    position: relative;
+    display: grid;
+    border-radius: 20px;
+    width: 100%;
+    grid-template-columns: repeat(3,1fr); 
+    grid-gap:30px;
+    padding: 20px;
+    min-height: 300px;
+}
+  
+.timeblock .timecard{
+    position: relative;
+    display: grid;
+    width:100%;
+    background-color: var(--white);
+    box-shadow:0 7px 25px rgba(0,0,0,0.08);
+    border-radius: 20px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.clockarea{
+    display: block;
+    position: relative;
+    width: 100%;
+    background: var(--white);
+    min-height: 300px;
+    border-radius: 20px;
+    left:20px;
+}
+
+.timeblock .timecard .timename{
+    position: relative;
+    padding:4px;
+    font-size: 2rem;
+    padding: 15px;
+    color: var(--blue);
+}
+
+.timeblock .timecard .timearea{
+    position: relative;
+    padding:4px;
+    font-size: 2.8rem;
+    padding: 10px;
+    color: var(--blue);
+}
+
+.timeblock .timecard .pressblock{
+    position: relative;
+    color: var(--blue);
+    background:var(--white);
+    width: 140px;
+    height: 60px;
+    border-radius: 20px;
+    font-size: 30px;
+    left: 10px;
+}
+
+.timeblock .timecard .pressblock:hover{
+    color: var(--white);
+    background:var(--blue);
+    width: 180px;
+    height: 60px;
+    overflow: hidden;
+}
+
+/* =======================clock============================= */
+
+.clock-dial{
+    width: 500px;
+    height: 500px;
+    border: 20px solid var(--blue);
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.point{
+    width:20px;
+    height:20px;
+    background-color: var(--blue);
+    border-radius: 50%;
+    position: absolute;
+    top: 240px;
+    left: 230px;
+}
+
+.hour{
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--blue);
+    position: absolute;
+}
+
+.hour-1{
+    top:40px;
+    right: 130px;    
+}
+
+.hour-2{
+    top:125px;
+    right: 45px;    
+}
+
+.hour-3{
+    top:235px;
+    right: 10px;    
+}
+
+.hour-4{
+    top:320px;
+    right: 40px;    
+}
+
+.hour-5{
+    top:380px;
+    right: 110px;    
+}
+
+.hour-6{
+    bottom:10px;
+    right: 200px;    
+}
+
+.hour-7{
+    top:390px;
+    left: 150px;    
+}
+
+.hour-8{
+    top:335px;
+    left: 65px;    
+}
+
+.hour-9{
+    top:235px;
+    left: 20px;    
+}
+
+.hour-10{
+    top:125px;
+    left: 45px;    
+}
+
+.hour-11{
+    top:40px;
+    left: 120px;    
+}
+
+.hour-12{
+    top:20px;
+    left:220px    
+}
+
+.minute-hand-wrapper{
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 50px;
+    left:50px;
+    border-radius:50%;
+}
+
+.minute-hand{
+    position: relative;
+}
+
+.minute-hand .hand{
+    width: 3.5px;
+    height: 200px;
+    background-color: #2a2185;
+    position: absolute;
+    left: 198px;
+}
+
+.hour-hand-wrapper{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 100px;
+    left:100px;
+    border-radius:50%;
+}
+
+.hour-hand{
+    position: relative;
+}
+
+.hour-hand .hand{
+    width: 5px;
+    height: 150px;
+    background-color: #2a2185;
+    position: absolute;
+    left: 148px;
+}
+
+.second-hand-wrapper{
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    top: 75px;
+    left:75px;
+    border-radius:50%;
+}
+
+.second-hand{
+    position: relative;
+}
+
+.second-hand .hand{
+    width: 2px;
+    height: 175px;
+    background-color: #2a2185;
+    position: absolute;
+    left: 175px;
+}
+
+.clockarea .clocktitle{
+    position: relative;
+    font-size: 2.5rem;
+    text-align: center;
+    color:var(--blue) ;
+}
+
+/* ====================change clock time buttom============== */
+.btnblock{
+    position: relative;
+}
+
+.btnblock .botn{
+    width: 80px;
+    height: 30px;
+    background: var(--blue);
+    color: var(--white);
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 20px;   /* 拉開間距 */
+}
+
+
+.btnblock .botn:hover{
+    width: 105px;
+    height: 40px;
+    background: var(--black1);
+    color: var(--white);
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 20px;   /* 拉開間距 */
+    font-size: 30px;
+}
+
+/* ==================download================ */
+
+.downloadblock{
+    width: 100%;
+    position: relative;
+    padding: 20px;
+    min-height: 500px;
+    color: var(--white);
+}
+
+.downloadblock .loadingcircle{
+    width:500px ;
+    height:500px ;
+    border-radius: 50%;
+    border: 30px solid var(--black2);
+    margin: 0 auto;
+    position: relative;
+}
+
+.downloadblock .loadingcircle .loadingnumber{
+    position: relative;
+    top:45%;
+    left:18%;   
+    width: 300px;
+    color: var(--blue);
+    font-size: 3.5rem;
+    border-radius:20px;
+}
+
+.downloadblock .loadingcircle .downloadnumber{
+    position: relative;
+    top:45%;
+    left:10%;   
+    width: 360px;
+    color: var(--blue);
+    font-size: 3.5rem;
+    border-radius:20px;
+}
+
+.imgstyle{
+    width: 600px;
+    height:400px;
+    position: absolute;
+    padding: 20px;
+
+}
+
+.imgbutton, .filebutton{
+   position:relative;
+   left: 35%;
+   padding: 20px;
+   font-size: 1rem;
+}
+
+/* =======================login signout bar========================== */
+
+
+
+.loginmenu ul{ 
+    width: 100%;
+    height:100%;
+    position:relative;
+}
+
+.loginmenu ul li{ 
+    font-size: 1.3rem;
+    margin-top: 30px;
+    margin-left: 15px;
+    position:relative;
+    list-style:none;
+    width:100%;
+    border-radius: 15px;
+}
+
+
+.loginmenu ul li:hover {
+    background-color:var(--white);
+    
+}
+
+.loginmenu ul li a{
+    color:var(--white);
+    width: 100%;
+    height: 100%;
+    text-decoration:none;  /*  讓底線不見 */
+}
+
+.loginmenu ul li:hover a,          /*   當li hover的時候，a應該如何呈現     */
+.loginmenu ul li.hovered a{          /* 下面這句為當li hover的時候，而a被包刮在li李的時候應該如何呈現*/
+    color:var(--blue);
+
+}
+ 
+
+.loginmenu ul li a .logintitle{
+    position: relative;
+    
+}
+
+.loginmenu ul li a .signouttitle{
+    position: relative;
+    
+}
+
+/* .loginmenu ul li:hover a::before,         
+.loginmenu ul li.hovered a::before{
+    content:"";
+    position:absolute;
+    left:-110px;
+    top:56px;
+    width: 50px;
+    height: 50px;
+    background-color: red transparent;
+    border-radius: 50%;
+    box-shadow: -35px -28px 0 10px var(--white);
+    pointer-events: none;
+}
+
+.loginmenu ul li:hover a::after,
+.loginmenu ul li.hovered a::after{
+    content:"";
+    position:absolute;
+    left:-110px;
+    bottom:74px;
+    width: 50px;
+    height: 50px;
+    background-color: red transparent;
+    border-radius: 50%;
+    box-shadow: -35px 28px 0 10px var(--white);
+    pointer-events: none;
+} */
+
+/* ===============================icon==================================== */
+
+.loginicon{
+    font-size:2rem;
+    position: relative;
+    left: 1px;
+    top:10px;
+}
+
+.loginicon:hover{
+    color: var(--blue);
+}
+
+.loginicon ion-icon{
+    font-size:2.5rem;
+    position: relative;
+    margin-right: 10px;
+}
+
+/* ====================login bar active============================== */
+
+.loginmenu{
+    position:absolute;
+    width: 0px;
+    height: 0px;
+    transition: 00ms;
+    border-radius: 50px;
+    left: 86%;
+}
+
+.loginmenu.active{
+    position:absolute;
+    background: rgba(15, 17, 133, 0.7);
+    width:230px;
+    height:20%;
+    overflow: hidden;
+    transition: 0.5s;
+    border-radius: 20px;
+    z-index: 998;
+}
+
+/* ======================login function============================ */
+
+.loginblock{
+    position: relative;
+    width:600px;
+    height: 400px;
+    background: rgba(8, 8, 8, 0.8);
+    left:500px;
+    top: 150px;
+    border-radius: 20px;
+    border: 8px solid black;
+}
+
+.loginblock .logintitleicon{
+    color: var(--white);
+    font-size: 5rem;
+    padding: 50px;
+}
+
+.loginblock .unlocktitle{
+    position: relative;
+    margin-top: 50px;
+    margin-left: 70px;
+    width: 450px;
+    /* background: rgba(0, 0, 0, 0.966); */
+    height:200px;
+}
+
+.loginblock .unlocktitle .loginuser{
+    position: relative;
+    padding-left: 70px;
+    padding-top: 10px;
+}
+
+.loginblock .unlocktitle .loginuser .usertitleicon{
+   color: var(--white);
+   position: relative;
+   font-size: 3.5rem;
+}
+
+.loginblock .unlocktitle .loginuser .userinput{
+    color: var(--black1);
+    font-size: 22px;
+    position: relative;
+    border-radius: 20px;
+    border: 4px solid gray;
+    top:-12px
+ }
+
+ .loginblock .unlocktitle .loginpassword{
+    position: relative;
+    padding-left: 70px;
+    padding-top: 10px;
+}
+
+ .loginblock .unlocktitle .loginpassword .pwtitleicon{
+    color: var(--white);
+    position: relative;
+    font-size: 3.5rem;
+ }
+
+ .loginblock .unlocktitle .loginpassword .pwinput{
+    color: var(--black1);
+    position: relative;
+    border-radius: 20px;
+    border: 4px solid gray;
+    font-size: 22px;
+    top:-12px
+ }
+
+ .loginblock .loginbutton{
+    position: relative;
+    left: 530px;
+    width: 150px;
+    bottom: 20px;
+    
+ }
+
+ .loginblock .loginbutton .button{
+    position: relative;
+    font-size: 2.5rem;
+    background:none;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+ }
+
+ .loginblock .label{
+    top: 50px;
+    position: absolute;
+    border: none;
+    color: var(--white);
+    font-size:20px;
+    width: 250px;
+    height: 50px;
+ }
