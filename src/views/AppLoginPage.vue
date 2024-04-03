@@ -27,7 +27,8 @@ import AppLogin from '@/components/AppLogin.vue'
         data(){
             return{
             email:"",
-            password:""  
+            password:"",
+            words:""
             }
         },
 
@@ -35,6 +36,9 @@ import AppLogin from '@/components/AppLogin.vue'
             login(){
                 if(this.email==='123' && this.password==='123456'){
                     this.$router.push('/')
+                }
+                else{
+                    this.words= "wrong user account or password"
                 }
             }
         }

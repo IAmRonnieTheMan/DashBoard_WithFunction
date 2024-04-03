@@ -6,7 +6,7 @@
     
                 <div class="search">
                     <label>
-                        <input type="text" placeholder="Search Here">
+                        <input type="text" placeholder="Search Here" v-model="searchbar" @keyup.enter="handleEnter">
                         <ion-icon name="search-circle-outline"></ion-icon>
                     </label>
                 </div>
@@ -57,6 +57,37 @@ document.addEventListener("DOMContentLoaded", function() {
         loginmenu.classList.toggle("active");
     }
 });
+
+export default{
+    data(){
+        return{
+            searchbar:"",
+        }
+    },
+
+    methods:{
+        handleEnter(){
+            if(this.searchbar==='details'|| this.searchbar === 'DETAILS') {
+                this.$router.push('/2')
+            }
+            if(this.searchbar==='clock'|| this.searchbar === 'CLOCK') {
+                this.$router.push('/3')
+            }
+            if(this.searchbar==='download'|| this.searchbar === 'DOWNLOAD') {
+                this.$router.push('/5')
+            }
+            if(this.searchbar==='upload'|| this.searchbar === 'UPLOAD') {
+                this.$router.push('/6')
+            }
+            if(this.searchbar==='login'|| this.searchbar === 'LOGIN') {
+                this.$router.push('/8')
+            }
+            else{
+                this.searchbar="please enter vaild value"
+            }
+        }
+    }
+}
 
     
 

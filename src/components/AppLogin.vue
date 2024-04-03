@@ -4,7 +4,7 @@
             <li>
                 <a><router-link to="/8">
                 <span class="loginicon"><ion-icon name="log-in-outline"></ion-icon></span>&ensp;
-                <span class="logintitle" :words='nametitle'>LOGIN</span>
+                <span class="logintitle" :words='nametitle' @click="loginclick">LOGIN</span>
                 </router-link></a>
             </li>
             
@@ -26,10 +26,18 @@ export default{
 
     data(){
         return{
-            nametitle:'welcomeback'
+            nametitle:'',
         }
-    }
+    },
 
+    methods:{
+        loginclick(){
+            console.log('login click true')
+            this.nametitle="welcome back"
+        },
+
+       
+    }
    
 }
 // document.addEventListener("DOMContentLoaded",function(){

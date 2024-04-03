@@ -853,7 +853,7 @@
 /* ====================login bar active============================== */
 
 .loginmenu{
-    position:absolute;
+    position:relative;
     width: 0px;
     height: 0px;
     transition: 00ms;
@@ -864,7 +864,7 @@
 .loginmenu.active{
     position:absolute;
     background: rgba(15, 17, 133, 0.7);
-    width:230px;
+    width:190px;
     height:20%;
     overflow: hidden;
     transition: 0.5s;
@@ -879,7 +879,7 @@
     width:600px;
     height: 400px;
     background: rgba(8, 8, 8, 0.8);
-    left:500px;
+    left:100px;
     top: 150px;
     border-radius: 20px;
     border: 8px solid black;
