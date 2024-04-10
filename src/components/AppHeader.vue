@@ -12,7 +12,7 @@
                 </div>
     
                 <div class="user">
-                    <img src="@/assets/imgs/customer01.jpeg" alt="">
+                    <img src="@/assets/imgs/123.jpg">
                 </div>
     </div>
     </template>
@@ -58,38 +58,47 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-export default{
-    data(){
-        return{
-            searchbar:"",
-        }
-    },
+    export default{
+        data(){
+            return{
+                searchbar:"",
+            
+            }
+        },
 
-    methods:{
-        handleEnter(){
-            if(this.searchbar==='details'|| this.searchbar === 'DETAILS') {
-                this.$router.push('/2')
+        methods:{
+            handleEnter() {
+        if (/^[a-zA-Z]+$/.test(this.searchbar)) {
+            const searchKeyword = this.searchbar.toUpperCase();
+            switch (searchKeyword) {
+            case "DETAILS":
+                this.$router.push("/2");
+                break;
+            case "CLOCK":
+                this.$router.push("/3");
+                break;
+            case "DOWNLOAD":
+                this.$router.push("/5");
+                break;
+            case "UPLOAD":
+                this.$router.push("/6");
+                break;
+            case "LOGIN":
+                this.$router.push("/8");
+                break;
+            default:
+                this.searchbar = "Please enter a valid value";
             }
-            if(this.searchbar==='clock'|| this.searchbar === 'CLOCK') {
-                this.$router.push('/3')
-            }
-            if(this.searchbar==='download'|| this.searchbar === 'DOWNLOAD') {
-                this.$router.push('/5')
-            }
-            if(this.searchbar==='upload'|| this.searchbar === 'UPLOAD') {
-                this.$router.push('/6')
-            }
-            if(this.searchbar==='login'|| this.searchbar === 'LOGIN') {
-                this.$router.push('/8')
-            }
-            else{
-                this.searchbar="please enter vaild value"
-            }
+            
+        } 
+        
+        else {
+            this.searchbar = "Please enter only English letters";
+        }
         }
     }
-}
 
-    
+}
 
 
 

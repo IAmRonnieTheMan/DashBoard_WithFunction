@@ -8,6 +8,8 @@ import AppDownload from '@/views/AppDownload.vue'
 import AppUpload from '@/views/AppUpload.vue'
 import AppLogin from '@/components/AppLogin.vue'
 import AppLoginPage from '@/views/AppLoginPage.vue'
+import AppChart from '@/views/AppChart.vue'
+import AppData from '@/views/AppData.vue'
 const routes = [
   {
    path:'/',
@@ -55,7 +57,18 @@ const routes = [
     path:'/8',
     name:'apploginpage',
     component:AppLoginPage
+   },
+   {
+    path:'/9',
+    name:'appchart',
+    component:AppChart
+   },
+   {
+    path:'/10',
+    name:'appdata',
+    component:AppData
    }
+   
    
    
    

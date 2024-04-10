@@ -48,10 +48,17 @@
                 </a></router-link>
             </li>
             <li>
-                <a><router-link to="#">
-                    <span class="icon"><ion-icon name="thumbs-down-outline"></ion-icon>
+                <a><router-link to="/9">
+                    <span class="icon"><ion-icon name="pie-chart-outline"></ion-icon>
                     </span> &ensp;
-                    <span class="title">Brand Name</span>
+                    <span class="title">CHART</span>
+                </router-link></a>
+            </li>
+            <li>
+                <a><router-link to="/10">
+                    <span class="icon"><ion-icon name="analytics-outline"></ion-icon>
+                    </span> &ensp;
+                    <span class="title">DATA</span>
                 </router-link></a>
             </li>
         </ul>
