@@ -21,7 +21,6 @@
 import AppLogin from '@/components/AppLogin.vue'
         
     export default{
-        props:['words'],
         components:{AppLogin},
       
         data(){
