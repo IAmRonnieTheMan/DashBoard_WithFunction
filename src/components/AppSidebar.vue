@@ -61,6 +61,13 @@
                     <span class="title">DATA</span>
                 </router-link></a>
             </li>
+            <li>
+                <a><router-link to="/11">
+                    <span class="icon"><ion-icon name="analytics-outline"></ion-icon>
+                    </span> &ensp;
+                    <span class="title">Test</span>
+                </router-link></a>
+            </li>
         </ul>
     </div>
 </template>

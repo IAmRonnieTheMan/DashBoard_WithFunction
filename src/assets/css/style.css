@@ -65,6 +65,12 @@
       margin-bottom:40px;
       pointer-events: none;
   }
+
+  .navigation ul li:nth-child(9){    /*把最上頭的li與下層的li分開*/
+    margin-top:290px;
+    font-size: 1.5rem;
+}
+
   
   .navigation ul li a{
   position:relative;
@@ -702,7 +708,7 @@
 /* ==================download================ */
 
 .downloadblock{
-    width: 100%;
+   width: 100%;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -710,19 +716,25 @@
 }
 
 .downloadblock .loadingcircle{
-    /* width:500px ;
-    height:500px ;
+    width:300px ;
+    height:300px ;
     border-radius: 50%;
     border: 30px solid var(--black2);
     margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
     position: relative;
- */
 }
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
 .downloadblock .loadingcircle .downloadbutton{
     position: relative;
     width: 170px;
-    height: 50px;
+    height: 52px;
     outline: none;
     color: var(--blue);
     font-size: 16px;
@@ -732,13 +744,12 @@
     display:flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .downloadblock .loadingcircle .downloadbutton.active{
    font-size: 0;
    width: 50px;
-   background: var(--white);
+   background:var(--white);
     
 }
 
@@ -747,40 +758,48 @@
     width:100px;
     height: 100px;
     /* background: yellowgreen; */
+    transform: scale(0);   /*"scale(0)"表示将元素缩放到0的大小 */
+    transition: 0.7s;
+    transition-delay:0.5s ;
 }
 
+button.active .progress-wrapper{
+    transform: scale(.6);   /*"scale(.6)"大小缩小到原始大小的60% */
+}
+
+/* inner是跑條中間的白色圓圈 */
 .progress-wrapper .inner{
     position: absolute;
     top: 50%;
     left:50%;
-    transform: translate(-50%,-50%);      /*它的作用是将元素在水平和垂直方向上分别向左和向上移动自身尺寸的一半。 */
+    transform: translate(-50%,-50%);   /* 把跑條中間的圓圈水平和垂直方向分别向左和向上移动50%的宽度和高度*/
     width: 60px;
     height: 60px;
     background: #fff;
     border-radius: 50%;
     z-index:2;
-    transition: 1s ease;
+    transition: 1s ease;   /* 会以一种缓慢开始，逐渐加速，然后再缓慢结束的方式进行 */
     transition-delay: 4s;
 }
 
 button.active .progress-wrapper .inner{
-    transform: translate(-50%,-50%) scale(0);
+    transform: translate(-50%,-50%) scale(0);  /* 跑完跑條後的勾勾畫面 */
 }
 
 .progress-wrapper .bar{
     position: absolute;
     width: 100%;
     height: 100%;
-    background: #ededed;
+    background:pink;
     border-radius: 50%;
-    clip:rect(0px,100px,100px,50px)
+    clip:rect(0px,100px,100px,50px) /* 定義一个裁剪區域*/
 }
 
 .circle .bar .progress{
     position: absolute;
     width: 100%;
     height: 100%;
-    background: #7d2ae7;
+    background: var(--blue);
     border-radius: 50%;
     clip:rect(0px,50px,100px,0px);
     z-index:1;
@@ -792,8 +811,54 @@ button.active .progress-wrapper .inner{
 }
 
 button.active .circle .bar.left .progress{
-transform: rotate(180deg);
+    transform: rotate(180deg);
 }
+
+.progress-wrapper .checkmark{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    z-index:2;
+}
+
+.checkmark span{
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 7px;
+    background:#fff;
+    border-radius: 5px;
+    transform-origin:left ;
+    transition: .5s;
+}
+
+.checkmark span:first-child{
+    top:45px;
+    left:22px;
+    width: 30px;
+    transform: rotate(45deg) scaleX(0);
+    transition-delay: 5s;
+}
+
+button.active .checkmark span:first-child{
+    transform: rotate(45deg) scaleX(1);
+}
+
+.checkmark span:last-child{
+    top:65px;
+    left:40px;
+    width: 50px;
+    transform: rotate(-45deg) scaleX(0);
+    transition-delay: 5.5s;
+}
+
+button.active .checkmark span:last-child{
+    transform: rotate(-45deg) scaleX(1);
+}
+
+
+/* ====================download img============================= */
 .imgstyle{
     width: 600px;
     height:400px;
@@ -919,7 +984,7 @@ transform: rotate(180deg);
     margin-right: 10px;
 }
 
-/* ====================login bar active============================== */
+/* ====================login bar active ============================== */
 
 .loginmenu{
     position:relative;
@@ -1059,3 +1124,4 @@ transform: rotate(180deg);
     list-style: none;
     position: relative;
 }
+

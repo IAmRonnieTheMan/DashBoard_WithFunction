@@ -1,23 +1,31 @@
 <template>
   <div class="downloadblock" ref="downloadblock">
     <div class="loadingcircle">
+
+
       <button class="downloadbutton" @click="imageclick" :class="{ active: isButtonActive }">
         download image
-  <div class="progress-wrapper">
-    <div class="inner"></div>
-    <div class="circle">
-      <div class="bar left">
-        <div class="progress"></div>
-      </div>
-      
-      <div class="bar right">
-        <div class="progress"></div>
-      </div>
-    </div>
-  </div>
+        <div class="progress-wrapper">
+          <div class="inner"></div>
+            <div class="checkmark">
+              <span><!-- 這是勾勾 --></span>
+              <span><!-- 這是勾勾 --></span>
+            </div> 
+          <div class="circle">
+            <div class="bar left">
+              <div class="progress"></div>
+            </div>
+            
+            <div class="bar right">
+              <div class="progress"></div>
+            </div>
+          </div>
+        </div>
       </button>
     </div>
   </div>
+
+  
 </template>
 
 <script>
@@ -52,7 +60,4 @@ export default {
 </script>
 
 <style scoped>
-  .downloadnumber.active {
-    /* Your active button styles here */
-  }
 </style>
