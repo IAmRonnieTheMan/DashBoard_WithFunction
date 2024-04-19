@@ -11,6 +11,7 @@ import AppLoginPage from '@/views/AppLoginPage.vue'
 import AppChart from '@/views/AppChart.vue'
 import AppData from '@/views/AppData.vue'
 import AppTest from '@/views/AppTest.vue'
+import AppLoading from '@/views/AppLoading.vue'
 const routes = [
   {
    path:'/',
@@ -73,6 +74,11 @@ const routes = [
     path:'/11',
     name:'apptest',
     component:AppTest
+   },
+   {
+    path:'/12',
+    name:'apploading',
+    component:AppLoading
    }
    
    

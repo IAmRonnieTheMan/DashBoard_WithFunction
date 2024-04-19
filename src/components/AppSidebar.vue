@@ -11,7 +11,7 @@
 
             <li>
                 <a><router-link to="/2">
-                    <span class="icon"><ion-icon name="logo-chrome"></ion-icon>
+                    <span class="icon"><ion-icon name="cellular-outline"></ion-icon>
                     </span> &ensp;
                     <span class="title">DETAILS</span>
                 </router-link></a>
@@ -19,7 +19,7 @@
 
             <li>
                 <a><router-link to="/3">
-                    <span class="icon"><ion-icon name="warning-outline"></ion-icon>
+                    <span class="icon"><ion-icon name="hourglass-outline"></ion-icon>
                     </span> &ensp;
                     <span class="title">CLOCK</span>
                 </router-link></a>
@@ -27,7 +27,7 @@
 
             <li>
                 <a><router-link to="/5">
-                    <span class="icon"><ion-icon name="earth-outline"></ion-icon>
+                    <span class="icon"><ion-icon name="cloud-download-outline"></ion-icon>
                     </span> &ensp;
                     <span class="title">DOWNLOAD</span>
                 </router-link></a>
@@ -35,14 +35,14 @@
 
             <li>
                 <a><router-link to="/6">
-                    <span class="icon"><ion-icon name="headset-outline"></ion-icon>
+                    <span class="icon"><ion-icon name="cloud-upload-outline"></ion-icon>
                     </span> &ensp;
                     <span class="title">UPLOAD</span>
                 </router-link></a>
             </li>
             <li>
                 <router-link to="/8"><a>
-                    <span class="icon"><ion-icon name="planet-outline"></ion-icon>
+                    <span class="icon"><ion-icon name="person-outline"></ion-icon>
                     </span> &ensp;
                     <span class="title">LOGIN</span>
                 </a></router-link>
@@ -59,6 +59,13 @@
                     <span class="icon"><ion-icon name="analytics-outline"></ion-icon>
                     </span> &ensp;
                     <span class="title">DATA</span>
+                </router-link></a>
+            </li>
+            <li>
+                <a><router-link to="/12">
+                    <span class="icon"><ion-icon name="wifi-outline"></ion-icon>
+                    </span> &ensp;
+                    <span class="title">LOADING FUNCTION</span>
                 </router-link></a>
             </li>
             <li>
