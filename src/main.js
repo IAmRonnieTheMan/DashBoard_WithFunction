@@ -5,3 +5,4 @@ import CoreuiVue from '@coreui/vue'
 import { IonIcon } from '@ionic/vue'
 
 createApp(App).use(router).use(CoreuiVue).component('ion-icon', IonIcon).mount('#app')
+

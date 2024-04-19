@@ -1,8 +1,6 @@
 <template>
   <div class="downloadblock" ref="downloadblock">
     <div class="loadingcircle">
-
-
       <button class="downloadbutton" @click="imageclick" :class="{ active: isButtonActive }">
         download image
         <div class="progress-wrapper">

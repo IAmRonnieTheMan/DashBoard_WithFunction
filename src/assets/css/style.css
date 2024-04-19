@@ -862,7 +862,7 @@ button.active .checkmark span:last-child{
 .imgstyle{
     width: 600px;
     height:400px;
-    position: absolute;
+    position: relative;
     padding: 20px;
 
 }
@@ -1124,4 +1124,6 @@ transform: rotate(180deg);
     list-style: none;
     position: relative;
 }
+
+
 

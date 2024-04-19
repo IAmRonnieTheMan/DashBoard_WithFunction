@@ -1,0 +1,29 @@
+.showdata{
+    position: relative;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.showdata li{
+    list-style: none;
+}
+
+.downloadfile{
+    width: 100%;
+    min-height:60vh;
+}
+
+.downloadfile .downloadcircle{
+    width: 200px;
+    height: 200px;
+    background: lightpink;
+    border: 50px solid;
+    border-radius: 50%;
+    margin:0 auto;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    display: flex;
+}
