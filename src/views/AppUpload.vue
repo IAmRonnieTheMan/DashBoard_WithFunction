@@ -80,8 +80,8 @@ export default {
           // 使用 URL.createObjectURL 创建一个临时的 URL
           uploadedFileUrl.value = URL.createObjectURL(file);
         });
-        // ajax.open("POST", "http://localhost:3000/upload");
-        ajax.open("POST", "http://localhost:8080/6");
+        ajax.open("POST", "http://localhost:3000/upload");
+        // ajax.open("POST", "http://localhost:8080/6");
         ajax.send(formData);
       }
     };

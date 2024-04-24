@@ -6,7 +6,13 @@ const multer = require('multer');
 const path = require('path');
 //為node.js模組,提供讀取文件,寫入文件,刪除文件,修改文件
 const fs = require('fs');
-//可通過app變量蘭訪問express的各種功能
+//如果沒有該目錄,利用fs模塊創建一個
+const uploadDir = 'upload';
+if (!fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir);
+}
+
+//可通過app變量訪問express的各種功能
 const app = express();
 //此為應用express實例
 app.use(cors({
@@ -18,8 +24,10 @@ app.use(cors({
 //multer.diskStorage＝儲存在本機磁
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, 'Recent/'); // 指定文件保存的目錄
+        //path.join(__dirname加入後就成功執行了
+        cb(null, path.join(__dirname, 'upload/')); // 指定文件保存的目录为当前文件所在目录下的 upload 文件夹
     },
+    
     filename: function (req, file, cb) {
         cb(null, file.originalname); // 使用原始文件名作為保存的文件名
     }
@@ -27,22 +35,24 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 // 處理文件上傳的 POST 請求
-app.post('/Recent', upload.single('file1'), (req, res) => {
+app.post('/upload', upload.single('file1'), (req, res) => {
     try {
-        // 獲取上傳的文件信息
+        // 获取上传的文件信息
         const file = req.file;
 
         if (!file) {
             return res.status(400).send('No file uploaded.');
-        }console.error(error);
-        // 在這裡可以進行其他的檔案處理操作，例如保存文件信息到數據庫
-        //200為http協議中定義的狀態碼
+        }
+        
+        // 在这里可以进行其他的文件处理操作，例如保存文件信息到数据库
+        //200为http协议中定义的状态码
         res.status(200).send('File uploaded successfully.');
     } catch (error) {
         console.error(error);
         res.status(500).send('Internal server error.');
     }
 });
+
 
 // 監聽端口
 const port = 3000;

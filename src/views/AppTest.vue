@@ -36,7 +36,7 @@
        ajax.addEventListener("error", this.errorHandler, false);
        ajax.addEventListener("abort", this.abortHandler, false);
        //把資料上傳至http://localhost:3000/upload
-       ajax.open("POST", "http://localhost:3000/Recent");//endpoint
+       ajax.open("POST", "http://localhost:3000/upload");//endpoint
        ajax.send(formdata);
      },
      progressHandler(event) {
