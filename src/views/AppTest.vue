@@ -1,11 +1,14 @@
 <template>
-   <div>
+   <div class="uploadfunc">
                                                                                                                                          <!-- <h2>HTML5 File Upload Progress Bar Tutorial</h2> -->
      <!-- enctype表示表單中包含文件數據,通常用於上傳文件 -->
      <!-- @submit.prevent="uploadFile是vue的語法,把原本默認的提交行為調用為uploadfile的方式處理邏輯 -->
      <form id="upload_form" enctype="multipart/form-data" @submit.prevent="uploadFile">
-       <input type="file" name="file1" ref="fileInput" @change="uploadFile"><br>
-       <progress id="progressBar" :value="progress" max="100" style="width:300px;"></progress>
+        <div class="inputblock">
+          <input type="file" name="file1" ref="fileInput" @change="uploadFile">
+          {{ "drag file in me" }}
+        </div>
+       <progress id="progressBar" :value="progress" max="100"></progress>
         <h3 id="status">{{ status }}</h3>
        <p id="loaded_n_total">{{ loaded }} bytes of {{ total }}</p>
      </form>
@@ -59,4 +62,7 @@
    }
  };
  </script>
+ <style>
+@import '@/assets/css/upload.css';
+</style>
  

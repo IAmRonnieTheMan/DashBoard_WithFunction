@@ -1,0 +1,64 @@
+:root{
+    --blue : #2a2185;
+    --white: #fff;
+    --gray: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+}
+
+.uploadfunc{
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding:50px;
+}
+
+.uploadfunc #upload_form{
+    padding:50px;
+    width: 500px;
+    height: auto;
+    background:var(--blue);
+    color: var(--white);
+    border-radius: 11px;
+    border: 2px solid black;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: block;
+}
+
+.uploadfunc .inputblock{
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 300px;
+    border: 3px solid white;
+    border-radius: 15px;
+    padding: 15px;
+    font-size: 1.5rem;
+}
+
+
+/* 進度條還沒跑時 */
+/* 這些為非預設 */
+progress{
+    height:10px; 
+    width: 400px;
+    border: 2px solid #ccc; 
+    border-radius:15px;
+  }
+  
+  /*因為progressbar本身有預設顏色,所以在解析時更改*/
+  /* 進度條背景部分 */
+  /* 需要特別另外設定的原因是因為不同瀏覽器會有不同的前綴,意思是不同瀏覽器會給定不同的顏色,會了確保顏色一致性才用webkit */
+  progress::-webkit-progress-bar {
+    background-color: var(--white); 
+  }
+  
+  /* 進度條填充部分 */
+  progress::-webkit-progress-value {
+    background-color:var(--blue) ;
+  }
+  
