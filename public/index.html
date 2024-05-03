@@ -8,6 +8,50 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
     <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
 
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://meme-9064b-default-rtdb.asia-southeast1.firebasedatabase.app";
+      // TODO: Add SDKs for Firebase products that you want to use
+      import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-database.js";
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyDZImo-U70DGHPNT148GuJHxopewjV7oCg",
+        authDomain: "meme-9064b.firebaseapp.com",
+        projectId: "meme-9064b",
+        storageBucket: "meme-9064b.appspot.com",
+        messagingSenderId: "56471889728",
+        appId: "1:56471889728:web:db422665ef9aa2d1e3bca5"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const db = getDatabase();
+
+      const familyRef = ref(db, 'family')
+// 自定義物件
+const familyObj = {
+  father: {
+    name: 'jack',
+    age: '42'
+  },
+  mother: {
+    name: 'rose',
+    age: '39'
+  },
+  child: {
+    name: 'Alex',
+    age: '18'
+  }
+}
+// set 設置
+function setFN() {
+  set(familyRef, familyObj);
+}
+setFN()
+    </script>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap')
     </style>
