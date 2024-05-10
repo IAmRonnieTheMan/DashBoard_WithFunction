@@ -283,7 +283,7 @@
   }
   
   /* ==========order details================ */
-  .details{
+  /* .details{
       position:relative;
       width:100%;
       padding:20px;
@@ -324,7 +324,7 @@
   
   .details table{
       width:100%;
-      border-collapse: collapse; /*不懂*/
+      border-collapse: collapse; 把相鄰的邊框合併成一格
       margin-top: 10px;
       font-size: 35px;
   }
@@ -394,7 +394,7 @@
       font-size: 14px;
       font-weight:500 ;
   }
-  
+   */
   /* ==============customer============= */
   .recentCustomers{
       position:relative;
