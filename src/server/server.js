@@ -1,18 +1,14 @@
 // 提供中間件機制,允許開發者定義函數來處理http請求和響應
 const express = require('express'); 
-const cors = require('cors');
+                                                                                           // const cors = require('cors');
 //解析文件類型,提取上傳文件,將文件保存至指定目錄中
 const multer = require('multer');
 const path = require('path');
-
-//可通過app變量訪問express的各種功能
 const app = express();
-//此為應用express實例
-//更改header
-app.use(cors({
-    origin: 'http://localhost:8080', //允許來自該地址的請求
-    credentials: true //表示允許認證訊息,如cookies,http認證
-}));
+                                                                                            // app.use(cors({
+                                                                                            //     origin: 'http://localhost:8080', //允許來自該地址的請求
+                                                                                            //     credentials: true //表示允許認證訊息,如cookies,http認證
+                                                                                            // }));
 // 設置 Multer 中間件來處理文件上傳
 //multer.diskStorage＝儲存在本機磁
 const storage = multer.diskStorage({

@@ -69,6 +69,13 @@
                 </router-link></a>
             </li>
             <li>
+                <a><router-link to="/13">
+                    <span class="icon"><ion-icon name="airplane-outline"></ion-icon>
+                    </span> &ensp;
+                    <span class="title">UPLOAD SECOND</span>
+                </router-link></a>
+            </li>
+            <li>
                 <a><router-link to="/11">
                     <span class="icon"><ion-icon name="analytics-outline"></ion-icon>
                     </span> &ensp;

@@ -12,6 +12,7 @@
     align-items: center;
     display: flex;
     padding:50px;
+    min-width: 800px;
 }
 
 .uploadfunc #upload_form{

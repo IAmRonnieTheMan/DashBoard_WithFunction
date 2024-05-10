@@ -1,4 +1,5 @@
 <template>
+    <div class="datablock">
     <div>
       <h1>第一筆資料如下：</h1>
       <ul class="datalist">
@@ -6,13 +7,15 @@
           類別: {{ hotel.類別 }}，旅宿名稱: {{ hotel.旅宿名稱 }}
         </li>
       </ul>
+    </div>
+    <div>
       <h1>第二筆資料如下：</h1>
-      <pre v-if="externalData">
-        <!-- <pre v-if="externalData">{{ JSON.stringify(externalData, null, 1) }}</pre> -->
+      <pre v-if="externalData">{{ JSON.stringify(externalData, null, 10) }}
         <div v-for="(item, index) in externalData" :key="index">
           學年度: {{ item.學年度 }}, 學校代碼: {{ item.學校代碼 }}, 學校名稱: {{ item.學校名稱 }}
         </div>
       </pre>
+    </div>
     </div>
   </template>
   
@@ -66,4 +69,7 @@
     }
   }
   </script>
+  <style>
+  @import"@/assets/css/data.css";
+  </style>
   

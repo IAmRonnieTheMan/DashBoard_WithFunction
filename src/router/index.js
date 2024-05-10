@@ -12,6 +12,7 @@ import AppChart from '@/views/AppChart.vue'
 import AppData from '@/views/AppData.vue'
 import AppTest from '@/views/AppTest.vue'
 import AppLoading from '@/views/AppLoading.vue'
+import AppuploadSecond from '@/views/AppuploadSecond.vue'
 const routes = [
   {
    path:'/',
@@ -79,6 +80,11 @@ const routes = [
     path:'/12',
     name:'apploading',
     component:AppLoading
+   },
+   {
+    path:'/13',
+    name:'appuploadsecond',
+    component:AppuploadSecond
    }
    
    

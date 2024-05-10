@@ -1,0 +1,16 @@
+.datablock{
+    position: relative;
+    justify-content: center;
+    padding: 20px;
+    display: flex
+}
+
+.datablock h1{
+    position: relative;
+}
+
+.datalist{
+    list-style: none;
+    position: relative;
+    padding: 20px;
+}
