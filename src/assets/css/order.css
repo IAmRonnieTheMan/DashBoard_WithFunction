@@ -1,3 +1,53 @@
+ /* ==================cards=================== */
+ .cardBox{
+    position:relative;
+    padding:20px;
+    width:100%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);  /*物件排成一行*/
+    grid-gap:30px;
+}
+
+.cardBox .card{
+    position: relative;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    display:flex;
+    cursor:pointer;
+    justify-content: space-between;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+}
+
+.cardBox .card .numbers{
+    position: relative;
+    font-size: 2.5rem;
+    font-weight: 500;
+    color:var(--blue)
+}
+
+.cardBox .card .cardName{
+    margin-top: 5px;
+    font-size: 1.1rem;
+    color:var(--black2)
+}
+
+.cardBox .card .iconBx{
+    font-size: 2.5rem;
+    color:var(--black2)
+}
+
+.cardBox .card:hover{
+    background: var(--blue);
+}
+
+.cardBox .card:hover .numbers,
+.cardBox .card:hover .cardName,
+.cardBox .card:hover .iconBx{
+    color:var(--white)
+}
+
+ 
  /* ==========order details================ */
  .details{
     position:relative;
@@ -24,6 +74,31 @@
     align-items: flex-start;
 }
 
+.details.active{
+    position:relative;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    z-index:99;
+    transform: scale(1.01);
+    transition: 2.5s;
+}
+
+.recentOrders.active{
+    width: 100%;
+    height: 100%;
+    font-size: 3rem;
+    
+}
+
+.table.active{
+    width: 100%;
+    height: 100%;
+    font-size: 2.5rem;
+}
+
 .cardHeader h2{
     font-weight: 600;
     color: var(--blue);
@@ -39,22 +114,21 @@
 }
 
 
-.gg{
+/* .gg{
     position: relative;
     background-color: antiquewhite;
-    width: 100px;
+    width: 400px;
     height: 100px;
     font-size: 1.5rem;
 }
-
-.cardHeader .btn.active + .gg{
+.gg.active{
     position: absolute;
     width: 500px;
     height: 500px;
     display: flex;
     z-index: 99;
     left: 100px;
-}
+} */
 
 
 .details table{
@@ -128,4 +202,58 @@
     border-radius: 4px;
     font-size: 14px;
     font-weight:500 ;
+}
+
+/* ================================customer details===================================== */
+
+.recentCustomers{
+    position:relative;
+    display: grid;
+    min-height: 500px;
+    padding: 20px;
+    background: var(--white);
+    box-shadow:0 7px 25px rgba(0,0,0,0.08);
+    border-radius: 20px;
+}
+
+.recentCustomers .imgBx{
+    position: relative;
+    width:40px;
+    height: 40px;
+    border-radius: 50px;
+    overflow: hidden;
+}
+.recentCustomers .imgBx img{
+    position: absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    top:0;
+    left:0;
+}
+
+.recentCustomers table tr:hover{
+    background:var(--blue);
+    color:var(--white)
+}
+
+.recentCustomers table tr td{
+    padding: 12px 10px;
+   
+}
+
+.recentCustomers table tr td h4{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2rem;
+}
+
+.recentCustomers table tr td h4 span{
+    font-size: 14px;
+    color:var(--black2)
+}
+
+.recentCustomers table tr:hover td h4 span{
+    font-size: 14px;
+    color:var(--white)
 }

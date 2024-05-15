@@ -1,0 +1,235 @@
+
+
+.loginmenu ul{ 
+    width: 100%;
+    height:100%;
+    position:relative;
+}
+
+.loginmenu ul li{ 
+    font-size: 1.3rem;
+    margin-top: 30px;
+    margin-left: 15px;
+    position:relative;
+    list-style:none;
+    width:100%;
+    border-radius: 15px;
+}
+
+
+.loginmenu ul li:hover {
+    background-color:var(--white);
+    
+}
+
+.loginmenu ul li a{
+    color:var(--white);
+    width: 100%;
+    height: 100%;
+    text-decoration:none;  /*  讓底線不見 */
+}
+
+.loginmenu ul li:hover a,          /*   當li hover的時候，a應該如何呈現     */
+.loginmenu ul li.hovered a{          /* 下面這句為當li hover的時候，而a被包刮在li李的時候應該如何呈現*/
+    color:var(--blue);
+
+}
+ 
+
+.loginmenu ul li a .logintitle{
+    position: relative;
+    
+}
+
+.loginmenu ul li a .signouttitle{
+    position: relative;
+    
+}
+
+/* .loginmenu ul li:hover a::before,         
+.loginmenu ul li.hovered a::before{
+    content:"";
+    position:absolute;
+    left:-110px;
+    top:56px;
+    width: 50px;
+    height: 50px;
+    background-color: red transparent;
+    border-radius: 50%;
+    box-shadow: -35px -28px 0 10px var(--white);
+    pointer-events: none;
+}
+
+.loginmenu ul li:hover a::after,
+.loginmenu ul li.hovered a::after{
+    content:"";
+    position:absolute;
+    left:-110px;
+    bottom:74px;
+    width: 50px;
+    height: 50px;
+    background-color: red transparent;
+    border-radius: 50%;
+    box-shadow: -35px 28px 0 10px var(--white);
+    pointer-events: none;
+} */
+
+/* ===============================icon==================================== */
+
+.loginicon{
+    font-size:2rem;
+    position: relative;
+    left: 1px;
+    top:10px;
+}
+
+.loginicon:hover{
+    color: var(--blue);
+}
+
+.loginicon ion-icon{
+    font-size:2.5rem;
+    position: relative;
+    margin-right: 10px;
+   overflow: hidden;
+}
+
+/* ====================login bar active ============================== */
+
+.loginmenu{
+    position:relative;
+    width: 0px;
+    height: 0px;
+    transition: 00ms;
+    border-radius: 50px;
+    left:100;
+    overflow: hidden;
+}
+
+.loginmenu.active{
+    position:absolute;
+    right: 0;
+    background: rgba(15, 17, 133, 0.7);
+    width:258px;
+    height:180px;
+    overflow: hidden;
+    transition: 0.5s;
+    border-radius: 20px;
+    z-index: 998;
+}
+
+/* ======================login function============================ */
+
+.loginblock{
+    position: relative;
+    width:600px;
+    height: 400px;
+    background: rgba(8, 8, 8, 0.8);
+    left:100px;
+    top: 150px;
+    border-radius: 20px;
+    border: 8px solid black;
+}
+
+.loginblock .logintitleicon{
+    color: var(--white);
+    font-size: 5rem;
+    padding: 50px;
+    position: absolute;
+    
+}
+
+.loginblock .unlocktitle{
+    position: relative;
+    margin-top: 150px;
+    margin-left: 70px;
+    width: 450px;
+    /* background: rgba(0, 0, 0, 0.966); */
+    height:200px;
+}
+
+.loginblock .unlocktitle .loginuser{
+    position: relative;
+    padding-left: 70px;
+    padding-top: 10px;
+}
+
+.loginblock .unlocktitle .loginuser .usertitleicon{
+   color: var(--white);
+   position: relative;
+   font-size: 3.5rem;
+}
+
+.loginblock .unlocktitle .loginuser .userinput{
+    color: var(--black1);
+    font-size: 22px;
+    position: relative;
+    border-radius: 20px;
+    border: 4px solid gray;
+    top:-12px
+ }
+
+ .loginblock .unlocktitle .loginpassword{
+    position: relative;
+    padding-left: 70px;
+    padding-top: 10px;
+}
+
+ .loginblock .unlocktitle .loginpassword .pwtitleicon{
+    color: var(--white);
+    position: relative;
+    font-size: 3.5rem;
+ }
+
+ .loginblock .unlocktitle .loginpassword .pwinput{
+    color: var(--black1);
+    position: relative;
+    border-radius: 20px;
+    border: 4px solid gray;
+    font-size: 22px;
+    top:-12px
+ }
+
+ .loginblock .loginbutton{
+    position: relative;
+    left: 530px;
+    width: 150px;
+    bottom: 20px;
+    
+ }
+
+ .loginblock .loginbutton .button{
+    position: relative;
+    font-size: 2.5rem;
+    background:none;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+ }
+
+ .loginblock .label{
+    top: 85px;
+    left: 175px;
+    position: absolute;
+    border: none;
+    color: var(--white);
+    font-size:20px;
+    width: 250px;
+    height: 50px;
+ }
+
+ .youcanlogin{
+    position: absolute;
+    font-size: 2.5rem;
+    right: 65px;
+    top:40px;
+    background: none;
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+ }
+
+ .youcanlogin:hover{
+    font-size: 4.5rem;
+    color: lightskyblue;
+ }

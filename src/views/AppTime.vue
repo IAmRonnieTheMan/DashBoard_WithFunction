@@ -1,55 +1,61 @@
 <template>
 <div class="timeblock">
     <div class="timecard">
-        <div class="timename">
-         Taiwan
+            <div class="timename">
+                Taiwan
+            </div>
+            <div class="timearea">
+                {{currentTaiwan}}
+            </div>
+            <div>
+                <button type="button" class="pressblock1" @click="showsvg1"> <!-- @click="gototaiwan" -->
+                    Taiwan
+                </button>
+            </div>
+            <div class="taiwansvg" :class="{'active':svgjump1}">
+                <img src="@/assets/svg/Taiwan.svg">
+            </div>
         </div>
-        <div class="timearea">
-         {{currentTaiwan}}
+        <div class="timecard">
+           <div class="timename">
+                Korea
+            </div>
+            <div class="timearea">
+                {{currentKorea}}
+            </div>
+                <button type="button" class="pressblock2" @click="showsvg2">          <!--@click="gotokorea" -->
+                    Korea
+                </button>
+             <div class="koreasvg" :class="{'active':svgjump2}">
+                <img src="@/assets/svg/Korea.svg">
+            </div>
         </div>
-        <div :title="taiwantime">
-         <button type="button" class="pressblock" :title="taiwantime"> <!-- @click="gototaiwan" -->
-            Taiwan
-         </button>
-         </div>
-        
-    </div>
-    <div class="timecard">
-       <div class="timename">
-         Korea
+        <div class="timecard">
+            <div class="timename">
+                Rome
+            </div>
+            <div class="timearea">
+                {{currentRome}}
+            </div>
+             <button type="button" class="pressblock3" @click="showsvg3">       <!--@click="gotorome"-->
+                Rome
+             </button>
+             <div class="italysvg" :class="{'active':svgjump3}">
+                <img src="@/assets/svg/Italy.svg">
+            </div>
         </div>
-        <div class="timearea">
-         {{currentKorea}}
-        </div>
-
-         <button type="button" class="pressblock" :title="koreatime">          <!--@click="gotokorea" -->
-             Korea
-         </button>
-    </div>
-    <div class="timecard">
-        <div class="timename">
-         Rome
-        </div>
-
-        <div class="timearea">
-         {{currentRome}}
-        </div>
-
-         <button type="button" class="pressblock" :title="rometime">       <!--@click="gotorome"-->
-            Rome
-         </button>
-    </div>
 </div>
 
- <div class="clockarea">
+<div class="clockarea">
     <div class ="clocktitle">
     click to show the time
     </div>
     <AppClock></AppClock>
-    </div>
+</div>
 </template>
 <script>
-import AppClock from '@/views/AppClock.vue'
+import AppClock from '@/views/AppClock.vue';
+import photo from "@/assets/svg/Italy.svg";
 export default{
     components:{AppClock},
     data(){
@@ -63,6 +69,11 @@ export default{
             // kGo:false,
             // rGo:false,
             // tGo:true,
+            photo,
+            svgjump1:false,
+            svgjump2:false,
+            svgjump3:false
+            
         }
     },
     mounted(){
@@ -119,6 +130,7 @@ export default{
         this.currentRome = `${hour}:${minute}:${second}`;
         this.rometime=now.toLocaleDateString()+','+now.toLocaleTimeString();
     },
+
     
     // gototaiwan(){
     //     this.kGo=false
@@ -137,11 +149,22 @@ export default{
     //     this.tGo=false
     //     this.rGo=true
     // },
+
+    showsvg1(){
+                this.svgjump1=!this.svgjump1
+            },
+            showsvg2(){
+                this.svgjump2=!this.svgjump2
+            },
+            showsvg3(){
+                this.svgjump3=!this.svgjump3
+            }
 }
 
 }
+
 </script>
 
 <style>
-@import '@/assets/css/style.css'
+@import '@/assets/css/svg.css'
 </style>

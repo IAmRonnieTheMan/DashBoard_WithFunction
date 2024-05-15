@@ -35,22 +35,10 @@ export default{
             console.log('login click true')
             this.nametitle="welcome back"
         },
-
-       
     }
    
 }
-// document.addEventListener("DOMContentLoaded",function(){
-    
-//     let logintitle =document.querySelector(".logintitle")
-//     let signouttitle =document.querySelector(".signouttitle")
-
-//     logintitle.onclick=function() {
-        
-//     }
-
-//     signouttitle.onclick=function() {
-//         alert('Are you sure you want to SIGNOUT')
-//     }
-// })
 </script>
+<style>
+@import "@/assets/css/login.css";
+</style>

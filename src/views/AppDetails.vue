@@ -42,14 +42,14 @@
         </div>
     </div>
  <!-- ========================order================= -->
-    <div class="details">
-        <div class="recentOrders">
-            <div class="cardHeader">
-                <h2>Recent Orders</h2>
-                <router-link to="#"><button class="btn">View All</button></router-link>
-            </div>
-
-            <table>
+ <div class="details" :class="{'active':zoomactive}">
+            <div class="recentOrders" :class="{'active':zoomactive}">
+                <div class="cardHeader">
+                    <h2>Recent Orders</h2>
+                   <button class="btn" @click="clicktozoom">View All</button>
+                </div>
+    
+                <table class="table" :class="{'active':zoomactive}">
                 <thead>
                     <tr>
                         <td>Name</td>
@@ -225,3 +225,21 @@
     </div>
 </div>
 </template>
+<script>
+export default{
+    data(){
+        return{
+            zoomactive:false
+        }
+    },
+
+    methods:{
+        clicktozoom(){
+            this.zoomactive=!this.zoomactive
+        }
+    }
+}
+</script>
+<style>
+@import '@/assets/css/order.css';
+</style>

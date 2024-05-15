@@ -4,8 +4,8 @@
                     <ion-icon name="grid-outline"></ion-icon>
                 </div>
     
-                <div class="search">
-                    <label>
+                <div class="search">       
+                   <label>                                                               <!-- 輸入鍵盤enter觸發事件 -->
                         <input type="text" placeholder="Search Here" v-model="searchbar" @keyup.enter="handleEnter">
                         <ion-icon name="search-circle-outline"></ion-icon>
                     </label>
@@ -41,10 +41,13 @@ login.forEach(item => item.addEventListener("mouseover", activeLink));
 // =======================Menu Toggle======================
 document.addEventListener("DOMContentLoaded", function() {
     // 等待文檔解析完成後執行 JavaScript 內容
+    // 這邊的toggle跟下面的classList.toggle是不同的,這邊為名稱,下面為方法
     let toggle = document.querySelector(".toggle");
     let navigation = document.querySelector(".navigation");
     let main = document.querySelector(".main");
-
+    
+    // classlist是用來管理class屬性的物件
+    // toggle是將原本的class元素移除變成特定的class
     toggle.onclick = function() {
         navigation.classList.toggle("active");
         main.classList.toggle("active");
@@ -68,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         methods:{
             handleEnter() {
+            // 測試是否都為英文字母
         if (/^[a-zA-Z]+$/.test(this.searchbar)) {
             const searchKeyword = this.searchbar.toUpperCase();
             switch (searchKeyword) {

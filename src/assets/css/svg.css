@@ -1,0 +1,111 @@
+.timeblock{
+    position: relative;
+    display: grid;
+    border-radius: 20px;
+    width: 100%;
+    grid-template-columns: repeat(3,1fr); 
+    grid-gap:30px;
+    padding: 20px;
+    min-height: 300px;
+}
+  
+.timeblock .timecard{
+    position: relative;
+    display: grid;
+    width:100%;
+    background-color: var(--white);
+    box-shadow:0 7px 25px rgba(0,0,0,0.08);
+    border-radius: 20px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.timeblock .timecard .timename{
+    position: relative;
+    padding:4px;
+    font-size: 2rem;
+    padding: 15px;
+    color: var(--blue);
+}
+
+.timeblock .timecard .timearea{
+    position: relative;
+    padding:4px;
+    font-size: 2.8rem;
+    padding: 10px;
+    color: var(--blue);
+}
+
+.timeblock .timecard .pressblock{
+    position: relative;
+    color: var(--blue);
+    background:var(--white);
+    width: 140px;
+    height: 60px;
+    border-radius: 20px;
+    font-size: 30px;
+    left: 10px;
+}
+
+.timeblock .timecard .pressblock:hover{
+    color: var(--white);
+    background:var(--blue);
+    width: 180px;
+    height: 60px;
+    overflow: hidden;
+}
+
+.taiwansvg img{
+    width:280px;
+    height:280px;
+    padding: 20px;
+
+}
+
+.taiwansvg{
+    transform: scale(0);
+}
+
+
+.koreasvg img{
+    width:280px;
+    height:280px;
+    padding: 20px;
+}
+
+.koreasvg{
+    transform: scale(0);
+}
+
+.italysvg img{
+    width:280px;
+    height:280px;
+    padding: 20px;
+}
+
+.italysvg{
+    transform: scale(0);
+}
+
+.taiwansvg.active{
+    transform: scale(1);
+}
+
+.koreasvg.active{
+    transform: scale(1);
+}
+
+
+.italysvg.active{
+    transform: scale(1);
+}
+
+.clockarea{
+    display: block;
+    position: relative;
+    width: 100%;
+    background: var(--white);
+    min-height: 300px;
+    border-radius: 20px;
+    left:20px;
+}
