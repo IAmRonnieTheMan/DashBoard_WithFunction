@@ -1,0 +1,62 @@
+.loadbar{
+    width: 670px;
+    height: 50px;
+    background-color:var(--white);
+    position: relative;
+    display: flex;
+    border: 5px solid var(--blue);
+    border-radius: 15px;
+    left: 20px;
+    margin-bottom: 10px;
+}
+
+.loadrunbar{
+    width: 100%;
+    height: 100%;
+    background-color:var(--black2);
+    position: relative;
+    display:flex;
+    border-radius:10px;
+}
+
+.press{
+    width: 150px;
+    height: 50px;
+    background-color: var(--blue);
+    color: var(--white);
+    border-radius: 20px;
+    margin: 20px;
+    font-size: 1.1rem;
+}
+
+.dataarea{
+    position: relative;
+    display: grid;
+    width: 700px;
+    height: 180px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 15px;
+}
+
+.datacard{
+    position:relative;
+    display:grid;
+    padding: 15px;
+    justify-content: space-between;
+    width: 100%;
+    height: 150px;
+    border-radius: 20px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+}
+
+.datahead{
+    font-size: 1.6em;
+}   
+
+.databody{
+    font-size: 2.5rem;
+    color:var(--blue);
+}
