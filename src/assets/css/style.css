@@ -66,8 +66,8 @@
       pointer-events: none;
   }
 
-  .navigation ul li:nth-child(11){    /*把最上頭的li與下層的li分開*/
-    margin-top:290px;
+  .navigation ul li:nth-child(12){    /*把最上頭的li與下層的li分開*/
+    margin-top:270px;
     font-size: 1.5rem;
 }
 

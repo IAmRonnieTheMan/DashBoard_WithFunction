@@ -34,6 +34,14 @@
             </li>
 
             <li>
+                <a><router-link to="/14">
+                    <span class="icon"><ion-icon name="cloud-download-outline"></ion-icon>
+                    </span> &ensp;
+                    <span class="title">DOWNLOAD WITH PROGRESSBAR</span>
+                </router-link></a>
+            </li>
+
+            <li>
                 <a><router-link to="/6">
                     <span class="icon"><ion-icon name="cloud-upload-outline"></ion-icon>
                     </span> &ensp;
