@@ -81,7 +81,6 @@ export default {
           uploadedFileUrl.value = URL.createObjectURL(file);
         });
         ajax.open("POST", "http://localhost:3000/upload");
-        // ajax.open("POST", "http://localhost:8080/6");
         ajax.send(formData);
       }
     };

@@ -11,6 +11,7 @@
     "@coreui/vue": "^4.10.2",
     "@ionic/vue": "^8.0.0-beta.3",
     "axios": "^1.6.8",
+    "chart": "^0.1.2",
     "chart.js": "^4.4.2",
     "core-js": "^3.8.3",
     "cors": "^2.8.5",

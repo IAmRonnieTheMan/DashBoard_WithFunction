@@ -37,7 +37,7 @@
                 <a><router-link to="/14">
                     <span class="icon"><ion-icon name="cloud-download-outline"></ion-icon>
                     </span> &ensp;
-                    <span class="title">DOWNLOAD WITH PROGRESSBAR</span>
+                    <span class="title">LOAD WITH PROGRESSBAR</span>
                 </router-link></a>
             </li>
 
@@ -46,6 +46,13 @@
                     <span class="icon"><ion-icon name="cloud-upload-outline"></ion-icon>
                     </span> &ensp;
                     <span class="title">UPLOAD</span>
+                </router-link></a>
+            </li>
+            <li>
+                <a><router-link to="/13">
+                    <span class="icon"><ion-icon name="airplane-outline"></ion-icon>
+                    </span> &ensp;
+                    <span class="title">UPLOAD SECOND</span>
                 </router-link></a>
             </li>
             <li>
@@ -74,13 +81,6 @@
                     <span class="icon"><ion-icon name="wifi-outline"></ion-icon>
                     </span> &ensp;
                     <span class="title">LOADING FUNCTION</span>
-                </router-link></a>
-            </li>
-            <li>
-                <a><router-link to="/13">
-                    <span class="icon"><ion-icon name="airplane-outline"></ion-icon>
-                    </span> &ensp;
-                    <span class="title">UPLOAD SECOND</span>
                 </router-link></a>
             </li>
             <li>

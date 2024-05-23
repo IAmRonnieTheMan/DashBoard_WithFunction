@@ -10,6 +10,16 @@
     margin-bottom: 10px;
 }
 
+.barblock{
+    position: relative;
+    width:fit-content;
+    height: fit-content;
+    border-radius: 20px;
+    display:flex;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 25px;
+}
+
 .loadrunbar{
     width: 100%;
     height: 100%;
@@ -36,7 +46,6 @@
     height: 180px;
     padding: 20px;
     border-radius: 20px;
-    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
     grid-template-columns: repeat(3,1fr);
     grid-gap: 15px;
 }
@@ -59,4 +68,62 @@
 .databody{
     font-size: 2.5rem;
     color:var(--blue);
+}
+
+.datawords{
+    position: relative;
+    left: 120px;
+    top:25px;
+    font-size: 2.5rem;    
+
+}
+
+.wordsblock{
+    position: relative;
+    display: flex;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.showarea{
+    position: relative;
+    width: 600px;
+    height: 600px;
+    display: flex;
+    padding: 20px;
+}
+
+.showarea img{
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top: 150px;
+    left: 150px;
+}
+
+.picwords{
+    font-size: 2rem;
+    position: absolute;
+    left: 210px;
+    top:40px; 
+}
+
+
+.docwords{
+    font-size: 1.9rem;
+    position: absolute;
+    top:370px;
+
+}
+
+.showblock{
+    position:absolute;
+    left: 900px;
+    width: 600px;
+    height: 600px;
+}
+
+.barchart{
+    position: absolute;
+    top:50px;
+    left: 750px;
 }

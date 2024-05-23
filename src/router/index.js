@@ -14,6 +14,7 @@ import AppTest from '@/views/AppTest.vue'
 import AppLoading from '@/views/AppLoading.vue'
 import AppuploadSecond from '@/views/AppuploadSecond.vue'
 import AppProgress from '@/views/AppProgress.vue'
+import AppDocx from '@/views/AppDocx.vue'
 const routes = [
   {
    path:'/',
@@ -91,6 +92,11 @@ const routes = [
     path:'/14',
     name:'appprogress',
     component:AppProgress
+   },
+   {
+    path:'/15',
+    name:'appdocx',
+    component:AppDocx
    }
    
    
