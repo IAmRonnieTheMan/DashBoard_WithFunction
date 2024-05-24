@@ -62,4 +62,8 @@ progress{
   progress::-webkit-progress-value {
     background-color:var(--blue) ;
   }
-  
+
+  .block123{
+    margin-top: 2px;
+    font-size: 1.1rem;
+  }

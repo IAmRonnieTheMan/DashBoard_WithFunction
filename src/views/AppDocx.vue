@@ -24,9 +24,10 @@
       </div>
     </div>
   </div>
-  <div class="showblock">
-    <p v-if="newURL" class="docwords">document have been downloaded</p>
-    <a :href="newURL" target="_blank" v-if="newURL"></a>
+  <div class="showblock" v-if="newURL">
+    <p class="docwords">document have been downloaded</p>
+    <p class="nextpage">{{ 'to the next page...' }}</p>
+    
   </div>
   </template>
     

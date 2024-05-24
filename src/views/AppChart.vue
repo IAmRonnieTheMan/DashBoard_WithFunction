@@ -1,13 +1,13 @@
 <template>
+<div class="chartbutton">
+  <button @click="changeone" class="chartbut">10 in chart</button>
+  <button @click="changetwo" class="chartbut">40 in chart</button>
+  <button @click="changethree" class="chartbut">80 in chart</button>
+</div>
   <div class="chartblock">
-    <div class="barchart" v-if="hotels.length > 0">
+    <div class="doughnutchart" v-if="hotels.length > 0">
       <Doughnut :data="chartData"></Doughnut>
     </div>
-    <!-- <div class="buttonchangedata">
-      <button type="button" class="changedatabutton" @click="updatelistdata">
-        clickme
-      </button>
-    </div> -->
   </div>
 </template>
 
@@ -26,8 +26,8 @@ export default {
         labels: [], // 初始化為空
         datasets: [{
           data: [], // 初始化為空
-          backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'], // Example colors
-          hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'] // Example hover colors
+          backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'], 
+          hoverBackgroundColor: 'black',
         }]
       },
       hotels: []
@@ -39,28 +39,53 @@ export default {
   methods: {
     fetchHotelsData() {
       fetch('https://api.kcg.gov.tw/api/service/Get/8ed53368-e292-4e2a-80a7-434cf497220c')
-        .then(response => response.json())
-        .then(data => {
-          this.hotels = data.data;
-          const slicedData = this.hotels.slice(0, 5); // 使用 this.hotels 進行切片
-          // 更新 chartData
-          this.chartData.labels = slicedData.map(hotel => hotel.旅宿名稱); 
-          this.chartData.datasets[0].data = slicedData.map(hotel => hotel.郵遞區號); 
+        .then(response => response.json()) //fetch返回一個promise（response）, response在利用response.json()將文檔變成json檔
+        .then(data => { //data為json解析後的數據
+          this.hotels=data.data //將解json析後的data屬性data賦值給hotels
+          this.updateChartdata(5)
         })
         .catch(error => console.error("獲取旅館資料時出錯：", error));
     },
 
-    // updatelistdata() {
-    //   const nextIndex = this.chartData.labels.length + 5; // 計算下一組資料的起始索引
-    //   if (nextIndex < this.hotels.length) {
-    //     const slicedData = this.hotels.slice(nextIndex, nextIndex + 5); // 更新後五筆資料
-    //     this.chartData.labels = slicedData.map(hotel => hotel.旅宿名稱); 
-    //     this.chartData.datasets[0].data = slicedData.map(hotel => hotel.郵遞區號);
-    //     console.log("換");
-    //   } else {
-    //     console.log("已經顯示所有資料。"); // 若已顯示完畢，則在控制台顯示訊息
-    //   }
-    // }
+    //把資料變成十筆
+    changeone(){
+      this.updateChartdata(10)
+    },
+
+    changetwo(){
+      this.updateChartdata(40)
+    },
+
+    changethree(){
+      this.updateChartdata(80)
+    },
+
+     updateChartdata(slicecount){
+      const slicedData=this.hotels.slice(0,slicecount)//slice(start,end)                                                                                              
+      this.chartData={
+        labels:slicedData.map(hoteldata=>hoteldata.旅宿名稱), //剛剛slice後的資料賦值到slicedData中並且，hoteldata為當前遍歷到的元素, 而hoteldata.旅宿名稱為提取元素
+        datasets:[{
+          data:slicedData.map(hoteldata=>hoteldata.郵遞區號),
+          backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'], 
+          hoverBackgroundColor: 'black',
+        }]
+      }
+
+    }
   }
 }
+
+
+// fetchHotelsData() {
+//   fetch('https://api.kcg.gov.tw/api/service/Get/8ed53368-e292-4e2a-80a7-434cf497220c')
+//     .then(response => response.json())
+//     .then(data => {
+//       this.hotels = data.data;
+//       const slicedData = this.hotels.slice(0, 5); // 使用 this.hotels 進行切片
+//       // 更新 chartData
+//       this.chartData.labels = slicedData.map(hotel => hotel.旅宿名稱); 
+//       this.chartData.datasets[0].data = slicedData.map(hotel => hotel.郵遞區號); 
+//     })
+//     .catch(error => console.error("獲取旅館資料時出錯：", error));
+// },
 </script>
