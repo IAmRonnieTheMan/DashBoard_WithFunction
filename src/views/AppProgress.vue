@@ -37,7 +37,7 @@
     <script>
     import axios from 'axios';
     import AppDocx from '@/views/AppDocx.vue';
-    import {Bar, Bubble} from 'vue-chartjs';
+    import {Bar} from 'vue-chartjs';
     import {Line} from 'vue-chartjs';
     import {Pie} from 'vue-chartjs';
     import {Chart as ChartJS, Tooltip, Legend, CategoryScale, LinearScale, BarElement, PointElement, LineElement,}from 'chart.js';

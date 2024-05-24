@@ -4,6 +4,7 @@
   <button @click="changetwo" class="chartbut">40 in chart</button>
   <button @click="changethree" class="chartbut">80 in chart</button>
 </div>
+<input v-model="number" type="number" class="chartinput" @keyup.enter="pressenter">
   <div class="chartblock">
     <div class="doughnutchart" v-if="hotels.length > 0">
       <Doughnut :data="chartData"></Doughnut>
@@ -30,7 +31,8 @@ export default {
           hoverBackgroundColor: 'black',
         }]
       },
-      hotels: []
+      hotels: [],
+      number:''
     }
   },
   mounted() {
@@ -60,6 +62,11 @@ export default {
       this.updateChartdata(80)
     },
 
+    pressenter(){
+      this.updateChartdata(parseInt(this.number))
+    },
+
+    //updateChartdata為函數,它接受一個參數slicecount
      updateChartdata(slicecount){
       const slicedData=this.hotels.slice(0,slicecount)//slice(start,end)                                                                                              
       this.chartData={
