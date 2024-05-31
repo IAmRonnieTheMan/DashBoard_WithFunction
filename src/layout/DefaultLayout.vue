@@ -18,6 +18,7 @@ import AppDetails from '@/views/AppDetails.vue';
 import AppLogin from '@/components/AppLogin.vue';
 import { RouterView } from 'vue-router';
 
+
 export default{
     components:{
         AppHeader,

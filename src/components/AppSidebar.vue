@@ -26,6 +26,14 @@
             </li>
 
             <li>
+                <a><router-link to="/17">
+                    <span class="icon"><ion-icon name="hourglass-outline"></ion-icon>
+                    </span> &ensp;
+                    <span class="title">ANALOG CLOCK</span>
+                </router-link></a>
+            </li>
+
+            <li>
                 <a><router-link to="/5">
                     <span class="icon"><ion-icon name="cloud-download-outline"></ion-icon>
                     </span> &ensp;

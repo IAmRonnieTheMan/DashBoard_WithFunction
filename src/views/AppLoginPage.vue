@@ -53,9 +53,10 @@ export default{
                             break;
                     }
                 },
-
+                //登入成後會觸發App.vue的loginSuccess事件
                 gogologin(){
                     this.$router.push('/')
+                    this.$emit('loginSuccess')
                 }
             }
         }

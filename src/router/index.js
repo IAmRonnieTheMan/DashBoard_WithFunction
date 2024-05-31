@@ -15,6 +15,8 @@ import AppLoading from '@/views/AppLoading.vue'
 import AppuploadSecond from '@/views/AppuploadSecond.vue'
 import AppProgress from '@/views/AppProgress.vue'
 import AppDocx from '@/views/AppDocx.vue'
+import AppTesting from '@/components/AppTesting.vue'
+import AppAnalogclock from '@/views/AppAnalogclock.vue'
 const routes = [
   {
    path:'/',
@@ -97,13 +99,17 @@ const routes = [
     path:'/15',
     name:'appdocx',
     component:AppDocx
-   }
-   
-   
-   
-   
-  
-  
+   },
+   {
+    path:'/16',
+    name:'apptesting',
+    component:AppTesting,
+   },
+   {
+    path:'/17',
+    name:'appanalogclock',
+    component:AppAnalogclock,
+   },
 ]
 
 const router = createRouter({
@@ -112,3 +118,5 @@ const router = createRouter({
 })
 
 export default router
+
+
