@@ -10,6 +10,7 @@
     "@coreui/coreui": "^4.3.2",
     "@coreui/vue": "^4.10.2",
     "@ionic/vue": "^8.0.0-beta.3",
+    "@vue/compiler-sfc": "^3.4.27",
     "axios": "^1.6.8",
     "chart": "^0.1.2",
     "chart.js": "^4.4.2",
@@ -21,7 +22,8 @@
     "ionicons": "^7.2.2",
     "multer": "^1.4.5-lts.1",
     "npm": "^10.5.0",
-    "vue": "^3.2.13",
+    "prefect": "^0.0.5",
+    "vue": "^3.4.27",
     "vue-chartjs": "^5.3.0",
     "vue-router": "^4.0.3",
     "vuex": "^4.1.0"
