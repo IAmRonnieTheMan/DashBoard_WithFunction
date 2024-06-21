@@ -16,6 +16,7 @@ import AppuploadSecond from '@/views/AppuploadSecond.vue'
 import AppProgress from '@/views/AppProgress.vue'
 import AppDocx from '@/views/AppDocx.vue'
 import AppTesting from '@/components/AppTesting.vue'
+import AppRegister from '@/views/AppRegister.vue'
 import AppAnalogclock from '@/views/AppAnalogclock.vue'
 const routes = [
   {
@@ -109,6 +110,11 @@ const routes = [
     path:'/17',
     name:'appanalogclock',
     component:AppAnalogclock,
+   },
+   {
+    path:'/18',
+    name:'appregister',
+    component:AppRegister,
    },
 ]
 
