@@ -15,7 +15,7 @@
                   <input class="pwinput" type="email" v-model="email" placeholder="type your email">
               </div>
           </div>
-      
+      <div class="backbutton" @click="back"><button class="button"><ion-icon name="arrow-back-outline"></ion-icon></button></div>
       <div class="loginbutton" @click="register"><button class="button"><ion-icon name="arrow-forward-outline"></ion-icon></button></div>
   </div>
   </template>
@@ -35,7 +35,6 @@ export default{
     //註冊且成功
     async register() {
       if(this.email !== '' && this.password !==''&& this.user!==''){
-      this.words=`註冊成功！您好${this.user}` //放對位置就好了
       try{ // 把資料寫入資料庫
         const response = await axios.post('http://localhost:3030/insert',{
           sqluser:this.user,
@@ -44,6 +43,10 @@ export default{
         })
         if(response.status===200){
           console.log('恭喜註冊成功')
+          this.words=`您好${this.user},2秒後跳回登入頁面`
+          setTimeout(()=>{
+            this.$emit('RegisterSuccessjump')
+          },2000)
         }
       }
       catch(error){
@@ -51,20 +54,16 @@ export default{
         if(error.response.status===400){
           this.words='已有相同使用者名稱或信箱'
         }
-        
-      }
       }
     }
-    
-
-    //檢查是否有相同帳號
-
-    //密碼不相同
-
-    //
   },
    
+      back(){
+          this.$emit('RegisterSuccessjump')
+      }
+   
 
+  }
 }
 </script>
 <style>

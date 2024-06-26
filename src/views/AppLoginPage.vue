@@ -48,16 +48,23 @@
   
           if (response.status === 200) {
             this.words = '登入成功囉';
-            this.gogologin();
-          } else if (response.status === 400) {
-            this.words = '登入失敗哭哭';
-          } else {
-            console.log('不知道怎麼了');
+            setTimeout(() => {
+              this.gogologin();
+            }, 2000);
           }
         } catch (error) {
-          console.error(error);
+        if (error.response.status === 400) {
+          if (error.response.data.message === 'no user') {
+            this.words = '無此使用者';
+          } else if (error.response.data.message === 'wrong password') {
+            this.words = '密碼錯誤';
+          }
+        } else {
           this.words = '登入失敗哭哭';
         }
+      }
+
+       
       },
   
       gogologin() {

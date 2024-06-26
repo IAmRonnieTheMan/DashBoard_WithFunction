@@ -27,7 +27,8 @@ app.post('/insert', async (req, res) => {
       return;
     }
     const result = await conn.query('INSERT INTO userpass (user, password, email) VALUES (?, ?, ?)', [sqluser, sqlpassword, sqlemail]);
-    res.json({ message: 'User, password, and email entered successfully', result });
+    console.log(result)
+    res.status(200).json({ message: 'User, password, and email entered successfully', insertId:Number(result.insertId) }); // insertId:Number(result.insertId) 原本因為沒有轉換輸入的值導致沒辦法傳送status200，甚至會傳送status500
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Internal server error' });
@@ -46,10 +47,14 @@ app.post('/get', async (req, res) => {
       const passwordinsql = await conn.query('SELECT password FROM userpass WHERE user = ?', [loginuser]);
       if (passwordinsql[0].password === loginpw) {
         res.status(200).json({ message: '成功登入' });
-      } else {
-        res.status(400).json({ message: '登入失敗，密碼不正確' });
+      } 
+      else {
+        res.status(400).json({ message: 'wrong password' });
       }
     } 
+    else{
+      res.status(400).json({ message: 'no user' });
+    }
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Internal server error' });

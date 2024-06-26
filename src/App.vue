@@ -2,7 +2,7 @@
     <!-- loginornot為false時顯示AppLoginPage, true則顯示DefaultLayout -->
     <DefaultLayout v-if="loginornot" />
     <AppLoginPage v-if="!loginornot && !registerornot" @loginSuccess="handleLoginSuccess" @RegisterSuccess="handleRegisterSuccess" />
-    <AppRegister v-if="registerornot" @RegisterSuccess="handleRegisterSuccess" />
+    <AppRegister v-if="registerornot" @RegisterSuccess="handleRegisterSuccess" @RegisterSuccessjump="handleRegisterSuccessJump"/>
 </template>
 
 <script>
@@ -19,7 +19,7 @@ export default {
     data() {
         return {
             loginornot: false,
-            registerornot: false
+            registerornot: false,
         }
     },
     methods: {
@@ -29,6 +29,9 @@ export default {
         handleRegisterSuccess() {
             this.registerornot = true;
             console.log('register=true');
+        },
+        handleRegisterSuccessJump(){
+            this.registerornot=false
         }
     }
 }
