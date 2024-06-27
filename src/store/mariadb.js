@@ -63,6 +63,22 @@ app.post('/get', async (req, res) => {
   }
 });
 
+app.get('/takeit', async(req,res)=>{
+  let conn 
+  try{
+    conn = await pool.getConnection()
+    const product = await conn.query('select * from product')
+    const customer =await conn.query('select * from customer')
+    res.json({message:'成功提取資料內容', product,customer})
+  }
+  catch(error){
+    console.error(error)
+  }
+  finally{
+    if(conn) conn.release()
+  }
+})
+
 http.createServer(app).listen(3030, () => {
   console.log('Listening on 3030');
 });

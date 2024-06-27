@@ -187,7 +187,7 @@
     font-size: 14px;
     font-weight:500 ;
 }
-.status.inProgress{
+.status.inprogress{
     padding: 2px 4px;
     background: lightgrey;
     color: var(--white);
