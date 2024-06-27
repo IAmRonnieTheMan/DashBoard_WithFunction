@@ -39,7 +39,7 @@ export default {
             const isLoggedIn = localStorage.getItem('isLoggedIn');
             const loginTime = localStorage.getItem('loginTime');
             const currentTime = new Date().getTime();
-            const halfHour = 180 * 60 * 1000;
+            const halfHour = 1 * 60 * 1000;
 
             if (isLoggedIn && loginTime && (currentTime - loginTime) < halfHour) { //有登入且抓取存取的時間且與現在時間差距小於半小時
                 this.loginornot = true;

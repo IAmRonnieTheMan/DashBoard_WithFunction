@@ -14,7 +14,7 @@
         </div>
         <div class="loginpassword">
           <span class="pwtitleicon"><ion-icon name="key-outline"></ion-icon></span>&ensp;
-          <input class="pwinput" type="password" v-model="password" placeholder="type your password">
+          <input class="pwinput" type="password" v-model="password" placeholder="type your password" @keypress.enter="login">
         </div>
       </div>
       <div class="register" @click="registerpage"><strong>register</strong></div>
