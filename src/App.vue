@@ -26,8 +26,8 @@ export default {
         handleLoginSuccess() {
             this.loginornot = true;
             const currentTime = new Date().getTime(); //取得登入時間
-            localStorage.setItem('isLoggedIn', true); 
-            localStorage.setItem('loginTime', currentTime);
+            localStorage.setItem('isLoggedIn', true); //除存'isLgoggedIn'為true在localStorage（本機儲存槽）中
+            localStorage.setItem('loginTime', currentTime); //除存'loginTime'為登入時間在localStorage（本機儲存槽）中
         },
         handleRegisterSuccess() {
             this.registerornot = true;
@@ -39,9 +39,9 @@ export default {
             const isLoggedIn = localStorage.getItem('isLoggedIn');
             const loginTime = localStorage.getItem('loginTime');
             const currentTime = new Date().getTime();
-            const halfHour = 1 * 60 * 1000;
+            const time = 800 * 60 * 1000;
 
-            if (isLoggedIn && loginTime && (currentTime - loginTime) < halfHour) { //有登入且抓取存取的時間且與現在時間差距小於半小時
+            if (isLoggedIn && loginTime && (currentTime - loginTime) < time) { //有登入且抓取存取的時間且與現在時間差距小於半小時
                 this.loginornot = true;
             } else {
                 this.loginornot = false;
