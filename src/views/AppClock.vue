@@ -1,17 +1,17 @@
 <template>
     <div class="btnblock">
-    <div class="botn">
-        <button type="button" class="botn" @click="totaiwan">Taiwan</button>
-    </div>
+        <div class="botn">
+            <button type="button" class="botn" @click="totaiwan">Taiwan</button>
+        </div>
 
-    <div class="botn">
-        <button type="button" class="botn" @click="tonewyork">Rome</button>
-    </div>
+        <div class="botn">
+            <button type="button" class="botn" @click="tonewyork">Rome</button>
+        </div>
 
-    <div class="botn">
-        <button type="button" class="botn"  @click="tokorea">Korea</button>
+        <div class="botn">
+            <button type="button" class="botn"  @click="tokorea">Korea</button>
+        </div>
     </div>
-</div>
 
     <div class="clock-dial" ref="clockDial">
         <div class="point"></div>
@@ -179,5 +179,5 @@ export default {
 </script>
 
 <style>
-@import '@/assets/css/style.css';  
+@import '@/assets/css/clock.css';  
 </style>

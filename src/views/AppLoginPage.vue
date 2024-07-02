@@ -50,7 +50,7 @@ export default {
           this.words = '登入成功囉';
           setTimeout(() => {
             this.gogologin();
-          }, 2000);
+          }, 1000);
         }
       } catch (error) {
         if (error.response.status === 400) {

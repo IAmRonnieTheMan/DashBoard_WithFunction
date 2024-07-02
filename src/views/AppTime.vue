@@ -8,7 +8,8 @@
                 {{currentTaiwan}}
             </div>
             <div>
-                <button type="button" class="pressblock1" @click="showsvg1"> <!-- @click="gototaiwan" -->
+                <button type="button" class="pressblock 
+                1" @click="showsvg1"> <!-- @click="gototaiwan" -->
                     Taiwan
                 </button>
             </div>
@@ -23,7 +24,7 @@
             <div class="timearea">
                 {{currentKorea}}
             </div>
-                <button type="button" class="pressblock2" @click="showsvg2">          <!--@click="gotokorea" -->
+                <button type="button" class="pressblock 2" @click="showsvg2">          <!--@click="gotokorea" -->
                     Korea
                 </button>
              <div class="koreasvg" :class="{'active':svgjump2}">
@@ -37,7 +38,7 @@
             <div class="timearea">
                 {{currentRome}}
             </div>
-             <button type="button" class="pressblock3" @click="showsvg3">       <!--@click="gotorome"-->
+             <button type="button" class="pressblock 3" @click="showsvg3">       <!--@click="gotorome"-->
                 Rome
              </button>
              <div class="italysvg" :class="{'active':svgjump3}">
@@ -50,14 +51,21 @@
     <div class ="clocktitle">
     click to show the time
     </div>
+    <div>
     <AppClock></AppClock>
+    </div>
+    <div>
+    <AppAnalogclock></AppAnalogclock>
+    </div>
 </div>
 </template>
 <script>
 import AppClock from '@/views/AppClock.vue';
-import photo from "@/assets/svg/Italy.svg";
+import AppAnalogclock from './AppAnalogclock.vue';
+
+
 export default{
-    components:{AppClock},
+    components:{AppClock,AppAnalogclock},
     data(){
         return {
             currentTaiwan:"",
@@ -69,7 +77,7 @@ export default{
             // kGo:false,
             // rGo:false,
             // tGo:true,
-            photo,
+           
             svgjump1:false,
             svgjump2:false,
             svgjump3:false
@@ -165,6 +173,6 @@ export default{
 
 </script>
 
-<style>
-@import '@/assets/css/svg.css'
+<style>                                         
+@import '@/assets/css/svg.css';
 </style>

@@ -56,7 +56,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #b6c3c9;
+    background-color: #1135d6;
   }
   
   .analog-clock__notch.-long::after {
@@ -66,7 +66,7 @@
   
   .analog-clock__hand {
     transform-origin: 50% 100%;
-    background-color: #7392a0;
+    background-color: #e46e0e;
     position: absolute;
     width: 2px;
     height: 40%;

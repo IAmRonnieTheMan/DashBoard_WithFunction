@@ -36,7 +36,7 @@
     color: var(--blue);
 }
 
-.timeblock .timecard .pressblock{
+.pressblock{
     position: relative;
     color: var(--blue);
     background:var(--white);
@@ -47,13 +47,12 @@
     left: 10px;
 }
 
-.timeblock .timecard .pressblock:hover{
+.pressblock:hover {
     color: var(--white);
-    background:var(--blue);
+    background: var(--blue);
     width: 180px;
-    height: 60px;
-    overflow: hidden;
 }
+
 
 .taiwansvg img{
     width:280px;
@@ -105,7 +104,7 @@
     position: relative;
     width: 100%;
     background: var(--white);
-    min-height: 300px;
+    min-height: 1500px;
     border-radius: 20px;
     left:20px;
 }
