@@ -10,8 +10,8 @@ app.use(bodyParser.json());
 const mariadb = require('mariadb');
 const pool = mariadb.createPool({
   host: 'localhost',
-  user: 'app_user',
-  password: '123456',
+  user: 'root',
+  password: 'root@iii',
   database: 'testone'
 });
 

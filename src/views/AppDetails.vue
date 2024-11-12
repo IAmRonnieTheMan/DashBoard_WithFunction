@@ -153,7 +153,7 @@
         this.sum= this.amount.reduce((acc,curr)=> acc+curr,0)
         this.indexcount =this.product.length
         this.returns =this.product.filter(product=>product.amount%7===2).length
-        this.china =this.customer.filter(customer =>customer.country ==="china").length
+        this.china =this.customer.filter(customer =>customer.country ==="China").length
       }
     },
     mounted() {
